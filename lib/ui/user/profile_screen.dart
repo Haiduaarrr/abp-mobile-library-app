@@ -4,10 +4,58 @@ import 'package:flutter/material.dart';
 // File ini adalah halaman pengguna untuk melihat siapa yang sedang login
 
 class ProfileScreen extends StatelessWidget {
+
+  // Fungsi untuk menampilkan Dialog
+  void _showDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Logout'), // Judul dialog
+          content: Text('Apakah Anda yakin ingin logout?'), // Isi dialog
+          actions: [
+            // Tombol Tidak
+            TextButton(
+              child: Text('Tidak'),
+              onPressed: () {
+                Navigator.of(context).pop(); // Menutup dialog
+              },
+            ),
+            // Tombol Ya
+            TextButton(
+              child: Text('Ya'),
+              onPressed: () {
+                Navigator.of(context).pop(); // Menutup dialog
+                // Tambahkan logika logout di sini, misalnya:
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => StartingPage()),
+                );
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text(
+          "Profile",
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Color(0xFF4A0D00),
+        iconTheme: IconThemeData(
+          color: Colors.white,
+        ),
+        centerTitle: true,
+      ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 32.0),
@@ -17,7 +65,7 @@ class ProfileScreen extends StatelessWidget {
               // Foto Profil
               CircleAvatar(
                 radius: 60,
-                //backgroundImage: AssetImage("assets/user.png"), // Sesuaikan dengan path gambar profil
+
                 backgroundColor: Colors.grey[300],
                 child: Icon(
                   Icons.person,
@@ -51,10 +99,7 @@ class ProfileScreen extends StatelessWidget {
               // Tombol Logout
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => StartingPage())
-                  );
+                  _showDialog(context); // Panggil fungsi dialog
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.redAccent,
@@ -68,21 +113,6 @@ class ProfileScreen extends StatelessWidget {
               ),
               SizedBox(height: 16),
 
-              // Tombol Back
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.brown,
-                  foregroundColor: Colors.white,
-                  padding: EdgeInsets.symmetric(vertical: 12, horizontal: 32),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
-                child: Text("Back", style: TextStyle(fontSize: 18)),
-              ),
             ],
           ),
         ),

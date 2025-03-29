@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:library_app_abp/ui/register/register_screen.dart';
 import 'package:library_app_abp/ui/user/user_home_screen.dart';
-
+import 'package:library_app_abp/ui/admin/admin_home_screen.dart';
 
 // File ini untuk login pengguna atau admin, tergantung usernam dan passwordnya nanti
 class LoginScreen extends StatefulWidget {
@@ -16,6 +16,8 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _passwordController = TextEditingController();
   bool _rememberMe = false;
   String? _errorMessage;
+  String _selectedRole = 'user'; // Default sebagai user
+
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +93,28 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
 
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 32),
+
+                  // Dropdown untuk memilih peran (Admin/User)
+                  SizedBox(
+                    width: 200,
+                    child: DropdownButtonFormField<String>(
+                      value: _selectedRole,
+                      items: [
+                        DropdownMenuItem(value: 'user', child: Text('User')),
+                        DropdownMenuItem(value: 'admin', child: Text('Admin')),
+                      ],
+                      onChanged: (value) {
+                        setState(() {
+                          _selectedRole = value!;
+                        });
+                      },
+                      decoration: InputDecoration(
+                        labelText: 'Login sebagai',
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
 
                   // Pesan Error
                   if (_errorMessage != null)
@@ -128,13 +151,27 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox (
                     width: 200,
                     child: ElevatedButton(
+                      // onPressed: () {
+                      //   // Tambahkan logika login di sini
+                      //   Navigator.push(
+                      //       context,
+                      //       //MaterialPageRoute(builder: (context) => HomeScreen())
+                      //       MaterialPageRoute(builder: (context) => AdminPage())
+                      //
+                      //   );
+                      // },
                       onPressed: () {
-                        // Tambahkan logika login di sini
-                        Navigator.push(
+                        if (_selectedRole == 'admin') {
+                          Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => HomeScreen())
-
-                        );
+                            MaterialPageRoute(builder: (context) => AdminPage()),
+                          );
+                        } else {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => HomeScreen()),
+                          );
+                        }
                       },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.brown[900],

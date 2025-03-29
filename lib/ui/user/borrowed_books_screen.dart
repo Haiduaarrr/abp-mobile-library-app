@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class BorrowedBooksScreen extends StatelessWidget {
   //final List<String> borrowedBooks = [];
 
-  // Di bawah ini misalkan ada beberapa buku
+  // Di bawah ini misalkan ada beberapa buku (data dummy)
   final List<String> borrowedBooks = [
     "Clean Code - Robert C. Martin",
     "The Pragmatic Programmer - Andrew Hunt",
@@ -19,6 +19,19 @@ class BorrowedBooksScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Color(0xFF4A0D00),
+        iconTheme: IconThemeData(
+          color: Colors.white
+        ),
+        title: Text("Borrowed Books",
+          style: TextStyle(
+            color: Colors.white,
+          )
+        ),
+        centerTitle: true,
+
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -27,7 +40,7 @@ class BorrowedBooksScreen extends StatelessWidget {
             children: [
               Center(
                 child: Text(
-                  "Borrowed Books",
+                  "Daftar buku yang dipinjam",
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.bold,
@@ -54,10 +67,10 @@ class BorrowedBooksScreen extends StatelessWidget {
                   itemCount: borrowedBooks.length,
                   itemBuilder: (context, index) {
                     return Card(
-                      elevation: 3,
+                      elevation: 4,  // Memberikan efek bayang pada cardnya
                       margin: EdgeInsets.symmetric(vertical: 8),
                       child: ListTile(
-                        leading: Icon(Icons.menu_book, color: Colors.brown),
+                        leading: Icon(Icons.menu_book, color:Color(0xFF4A0D00)),
                         title: Text(
                           borrowedBooks[index],
                           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
@@ -67,19 +80,26 @@ class BorrowedBooksScreen extends StatelessWidget {
                   },
                 ),
               ),
-              SizedBox(height: 20),
+              //SizedBox(height: 20),
               Center(
-                child: ElevatedButton(
-                  onPressed: () => Navigator.pop(context),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.brown[900],
-                    padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
+                child: 
+                // ElevatedButton(
+                //   onPressed: () => Navigator.pop(context),
+                //   style: ElevatedButton.styleFrom(
+                //     backgroundColor: Color(0xFF4A0D00),
+                //     padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                //     shape: RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.circular(10),
+                //     ),
+                //   ),
+                //   child: Text("Back", style: TextStyle(fontSize: 18, color: Colors.white)),
+                // ),
+                Text('Jangan lupa untuk dikembalikan',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.grey
                   ),
-                  child: Text("Back", style: TextStyle(fontSize: 18, color: Colors.white)),
-                ),
+                )
               ),
             ],
           ),

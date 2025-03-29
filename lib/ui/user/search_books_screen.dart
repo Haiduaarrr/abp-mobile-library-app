@@ -34,10 +34,13 @@ class _SearchBooksScreenState extends State<SearchBooksScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text("Search Books", style: TextStyle(color: Colors.white),),
-      //   backgroundColor: Color(0xFF4A0D00),
-      // ),
+      appBar: AppBar(
+        title: Text("Search Books", style: TextStyle(color: Colors.white),),
+        backgroundColor: Color(0xFF4A0D00),
+        iconTheme: IconThemeData(
+          color: Colors.white,
+        ),
+      ),
       body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
@@ -45,7 +48,7 @@ class _SearchBooksScreenState extends State<SearchBooksScreen> {
               children: [
                 Center(
                   child: Text(
-                    "Search Books",
+                    "Jelajahi koleksi",
                     style: TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
@@ -85,14 +88,14 @@ class _SearchBooksScreenState extends State<SearchBooksScreen> {
                 ),
                 SizedBox(height: 16),
 
-                ElevatedButton(
-                  onPressed: () => Navigator.pop(context),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.brown[800],
-                    padding: EdgeInsets.symmetric(vertical: 12, horizontal: 32),
-                  ),
-                  child: Text("Back", style: TextStyle(fontSize: 16, color: Colors.white)),
-                )
+                // ElevatedButton(
+                //   onPressed: () => Navigator.pop(context),
+                //   style: ElevatedButton.styleFrom(
+                //     backgroundColor: Colors.brown[800],
+                //     padding: EdgeInsets.symmetric(vertical: 12, horizontal: 32),
+                //   ),
+                //   child: Text("Back", style: TextStyle(fontSize: 16, color: Colors.white)),
+                // )
               ],
             ),
           )
