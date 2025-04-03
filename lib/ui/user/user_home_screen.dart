@@ -78,10 +78,6 @@ class HomeScreen extends StatelessWidget {
                             width: double.infinity,
                             height: 200,
                             decoration: BoxDecoration(
-                              // border: Border.all(
-                              //   color: Colors.brown,
-                              //   width: 4
-                              // ),
                               borderRadius: BorderRadius.circular(10),
                               image: DecorationImage(
                                 image: AssetImage("assets/rak_buku.jpg"),
@@ -106,7 +102,7 @@ class HomeScreen extends StatelessWidget {
                       Text(
                         "Daftar Buku",
                         style: TextStyle(
-                            fontSize: 18,
+                            fontSize: 22,
                             fontWeight: FontWeight.bold,
                             color: Color(0xFF4A0D00)
                         ),
@@ -138,7 +134,7 @@ class HomeScreen extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
                                       image: DecorationImage(
-                                        image: AssetImage("assets/book1.jpg"), // Ganti dengan path gambar buku
+                                        image: AssetImage("assets/4824032.jpg"), // Ganti dengan path gambar buku
                                         fit: BoxFit.contain,
                                       ),
 

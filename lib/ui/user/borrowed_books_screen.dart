@@ -40,7 +40,7 @@ class BorrowedBooksScreen extends StatelessWidget {
             children: [
               Center(
                 child: Text(
-                  "Daftar buku yang dipinjam",
+                  "Daftar Buku yang Dipinjam",
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.bold,
@@ -82,18 +82,7 @@ class BorrowedBooksScreen extends StatelessWidget {
               ),
               //SizedBox(height: 20),
               Center(
-                child: 
-                // ElevatedButton(
-                //   onPressed: () => Navigator.pop(context),
-                //   style: ElevatedButton.styleFrom(
-                //     backgroundColor: Color(0xFF4A0D00),
-                //     padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
-                //     shape: RoundedRectangleBorder(
-                //       borderRadius: BorderRadius.circular(10),
-                //     ),
-                //   ),
-                //   child: Text("Back", style: TextStyle(fontSize: 18, color: Colors.white)),
-                // ),
+                child:
                 Text('Jangan lupa untuk dikembalikan',
                   style: TextStyle(
                     fontSize: 20,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:library_app_abp/ui/admin/admin_manage_books_screen.dart';
+import 'package:library_app_abp/ui/admin/admin_request_screen.dart';
 import 'package:library_app_abp/ui/common/starting_page.dart';
 
 class AdminPage extends StatelessWidget {
@@ -46,10 +48,9 @@ class AdminPage extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
-          "R A K  B U K U",
+          "Admin Home",
           style: TextStyle(
               fontSize: 24,
-              fontFamily: 'Serif',
               color: Colors.white
           ),
         ),
@@ -66,6 +67,14 @@ class AdminPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              SizedBox(height:30),
+              Text(
+                "R A K  B U K U",
+                style: TextStyle(
+                  fontSize: 40,
+                  fontFamily: "Serif"
+                ),
+              ),
               SizedBox(height: 30),
               Text(
                 "Welcome, Admin!",
@@ -75,10 +84,23 @@ class AdminPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 30),
-              _buildButton(context, "Mengelola Buku",  Color(0xFF4A0D00), () {}),
-              _buildButton(context, "Mengelola Pengguna",  Color(0xFF4A0D00), () {}),
-              _buildButton(context, "Meminjam Buku",  Color(0xFF4A0D00), () {}),
-              _buildButton(context, "Mengembalikan Buku",  Color(0xFF4A0D00), () {}),
+              _buildButton(context, "Pengelolaan Buku",  Color(0xFF4A0D00), () {
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ManageBooks())  // Untuk menuju halaman admin manage book
+                );
+              }),
+              _buildButton(context, "Pengelolaan Pengguna",  Color(0xFF4A0D00), () {
+                //......
+              }),
+              _buildButton(context, "Peminjaman Buku",  Color(0xFF4A0D00), () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AdminRequest())
+                );
+              }),
+              _buildButton(context, "Pengembalian Buku",  Color(0xFF4A0D00), () {
+                //......
+              }),
               SizedBox(height: 30),
 
               // Tombol untuk logout pada home admin
@@ -121,7 +143,7 @@ class AdminPage extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             backgroundColor: color,
             foregroundColor: Colors.white,
-            padding: EdgeInsets.symmetric(vertical: 14),
+            padding: EdgeInsets.symmetric(vertical: 15),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
             ),

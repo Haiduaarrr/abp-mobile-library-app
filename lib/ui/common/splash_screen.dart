@@ -23,12 +23,11 @@ class SplashScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Gambar dengan bentuk asli (bukan lingkaran)
             Image.asset(
               'assets/rak_buku.jpg', // Path gambar
               width: 300, // Atur ukuran gambar
               height: 200,
-              fit: BoxFit.contain, // Menjaga bentuk asli gambar
+              fit: BoxFit.contain,
             ),
             const SizedBox(height: 16), // Jarak antara gambar dan teks
 

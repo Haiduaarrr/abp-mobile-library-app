@@ -9,6 +9,8 @@ class SearchBooksScreen extends StatefulWidget {
 
 class _SearchBooksScreenState extends State<SearchBooksScreen> {
   TextEditingController _searchController = TextEditingController();
+
+  // Di bawah ini misalkan ada beberapa buku (data dummy)
   final List<String> _allBooks = [
     "Flutter for Beginners",
     "Advanced Dart Programming",
