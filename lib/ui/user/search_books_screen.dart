@@ -42,6 +42,7 @@ class _SearchBooksScreenState extends State<SearchBooksScreen> {
         iconTheme: IconThemeData(
           color: Colors.white,
         ),
+        centerTitle: true,
       ),
       body: SafeArea(
           child: Padding(
@@ -89,15 +90,6 @@ class _SearchBooksScreenState extends State<SearchBooksScreen> {
                   ),
                 ),
                 SizedBox(height: 16),
-
-                // ElevatedButton(
-                //   onPressed: () => Navigator.pop(context),
-                //   style: ElevatedButton.styleFrom(
-                //     backgroundColor: Colors.brown[800],
-                //     padding: EdgeInsets.symmetric(vertical: 12, horizontal: 32),
-                //   ),
-                //   child: Text("Back", style: TextStyle(fontSize: 16, color: Colors.white)),
-                // )
               ],
             ),
           )

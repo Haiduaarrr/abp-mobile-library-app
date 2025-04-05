@@ -110,45 +110,35 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(height: 8),
 
                       // Daftar Buku menggunakan GridView
-                      GridView.builder(
+                      // Daftar Buku menggunakan ListView
+                      ListView.builder(
                         shrinkWrap: true,
                         physics: NeverScrollableScrollPhysics(),
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,   // Untuk membuat jadi 2 kolom
-                            crossAxisSpacing: 10,
-                            mainAxisSpacing: 10,
-                            childAspectRatio: 0.7 // Mengatur proporsi kartu buku
-                        ),
-                        itemCount: 8,  // Bisa diubah-ubah, misalkan untuk banyaknya buku
+                        itemCount: 8, // Ganti sesuai jumlah data real nanti
                         itemBuilder: (context, index) {
-                          return Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.grey[200]
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Expanded(
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
-                                      image: DecorationImage(
-                                        image: AssetImage("assets/4824032.jpg"), // Ganti dengan path gambar buku
-                                        fit: BoxFit.contain,
-                                      ),
+                          // Contoh data dummy
+                          String judul = 'Judul Buku $index';
+                          String penulis = 'Penulis $index';
+                          int stok = 5 + index;
 
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.all(8),
-                                  child: Text(
-                                    "Judul Buku $index",
-                                    style: TextStyle(fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                              ],
+                          return Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            elevation: 2,
+                            margin: EdgeInsets.symmetric(vertical: 6),
+                            child: Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(judul, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                                  SizedBox(height: 4),
+                                  Text('Penulis: $penulis'),
+                                  SizedBox(height: 4),
+                                  Text('Stok: $stok'),
+                                ],
+                              ),
                             ),
                           );
                         },
@@ -168,6 +158,7 @@ class HomeScreen extends StatelessWidget {
                   IconButton(
                     icon: Icon(Icons.home, color: Colors.white),
                     onPressed: () {},
+                    padding: EdgeInsets.all(12),
                   ),
                   IconButton(
                     icon: Icon(Icons.book, color: Colors.white),

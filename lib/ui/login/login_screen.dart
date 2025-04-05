@@ -16,7 +16,6 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _passwordController = TextEditingController();
   bool _rememberMe = false;
   String? _errorMessage;
-  String _selectedRole = 'user'; // Default sebagai user
 
 
   @override
@@ -27,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
         body: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.only(top: 25.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -95,26 +94,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
                   const SizedBox(height: 32),
 
-                  // Dropdown untuk memilih peran (Admin/User)
-                  SizedBox(
-                    width: 200,
-                    child: DropdownButtonFormField<String>(
-                      value: _selectedRole,
-                      items: [
-                        DropdownMenuItem(value: 'user', child: Text('User')),
-                        DropdownMenuItem(value: 'admin', child: Text('Admin')),
-                      ],
-                      onChanged: (value) {
-                        setState(() {
-                          _selectedRole = value!;
-                        });
-                      },
-                      decoration: InputDecoration(
-                        labelText: 'Login sebagai',
-                        border: OutlineInputBorder(),
-                      ),
-                    ),
-                  ),
 
                   // Pesan Error
                   if (_errorMessage != null)
@@ -151,28 +130,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox (
                     width: 200,
                     child: ElevatedButton(
-                      // onPressed: () {
-                      //   // Tambahkan logika login di sini
-                      //   Navigator.push(
-                      //       context,
-                      //       //MaterialPageRoute(builder: (context) => HomeScreen())
-                      //       MaterialPageRoute(builder: (context) => AdminPage())
-                      //
-                      //   );
-                      // },
                       onPressed: () {
-                        if (_selectedRole == 'admin') {
-                          Navigator.push(
+                        // Tambahkan logika login di sini
+                        // bisa diedit bagian BE :)
+                        Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => AdminPage()),
-                          );
-                        } else {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => HomeScreen()),
-                          );
-                        }
+                            MaterialPageRoute(builder: (context) => HomeScreen())
+                            //MaterialPageRoute(builder: (context) => AdminPage())
+                        );
                       },
+
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.brown[900],
                           foregroundColor: Colors.white
