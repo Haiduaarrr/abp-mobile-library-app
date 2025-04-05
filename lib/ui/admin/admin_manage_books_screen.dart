@@ -71,6 +71,7 @@ class _ManageBooksState extends State<ManageBooks> {
     );
   }
 
+  // Fungsi untuk menambahkan buku baru
   void _showDialogeditBook() {
     // Fungsi untuk edit buku.
     showDialog(
@@ -168,9 +169,10 @@ class _ManageBooksState extends State<ManageBooks> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Manage Books',
+        title: const Text('Pengelolaan Buku',
           style: TextStyle(color: Colors.white),
         ),
+        centerTitle: true,
         backgroundColor: Color(0xFF4A0D00),
         iconTheme: IconThemeData(
           color: Colors.white,
@@ -222,7 +224,7 @@ class _ManageBooksState extends State<ManageBooks> {
                 backgroundColor: Color(0xFF4A0D00),
                 padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
               ),
-              child: const Text("Add Book", style: TextStyle(color: Colors.white)),
+              child: const Text("Tambah Buku", style: TextStyle(color: Colors.white)),
             ),
           ],
         ),

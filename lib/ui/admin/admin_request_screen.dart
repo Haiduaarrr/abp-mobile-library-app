@@ -41,7 +41,7 @@ class _AdminRequestState extends State<AdminRequest> {
             actions: [
               // Tombol untuk menutup dialog
               TextButton(
-                // tambahkan 
+                // tambahkan
                 child: Text('Close'),
                 onPressed: () {
                   Navigator.of(context).pop();
@@ -57,7 +57,7 @@ class _AdminRequestState extends State<AdminRequest> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Permintaan Peminjaman Buku",
+        title: const Text("Peminjaman Buku",
           style: TextStyle(
             color: Colors.white,
           ),
@@ -95,8 +95,13 @@ class _AdminRequestState extends State<AdminRequest> {
                   child: Text(book),
                 );
               }).toList(),
-              onChanged: (value) {},
-              decoration: const InputDecoration(border: UnderlineInputBorder()),
+              onChanged: (value) {
+                //
+              },
+              decoration: const InputDecoration(
+                border: UnderlineInputBorder()
+
+              ),
             ),
             const SizedBox(height: 16),
             TextField(

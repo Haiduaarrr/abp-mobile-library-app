@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:library_app_abp/ui/admin/admin_return_screen.dart';
+import 'package:library_app_abp/ui/admin/admin_manage_users_screen.dart';
 import 'package:library_app_abp/ui/admin/admin_manage_books_screen.dart';
 import 'package:library_app_abp/ui/admin/admin_request_screen.dart';
 import 'package:library_app_abp/ui/common/starting_page.dart';
@@ -14,7 +16,7 @@ class AdminPage extends StatelessWidget {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text('Logout'), // Judul dialog
-          content: Text('Apakah Anda yakin ingin logout?'), // Isi dialog
+          content: Text('Apakah Anda yakin ingin keluar?'), // Isi dialog
           actions: [
             // Tombol Tidak
             TextButton(
@@ -48,7 +50,7 @@ class AdminPage extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
-          "Admin Home",
+          "Halaman Admin",
           style: TextStyle(
               fontSize: 24,
               color: Colors.white
@@ -77,7 +79,7 @@ class AdminPage extends StatelessWidget {
               ),
               SizedBox(height: 30),
               Text(
-                "Welcome, Admin!",
+                "Selamat datang, Admin!",
                 style: TextStyle(
                     fontSize: 26,
                     color: Colors.grey[500]
@@ -90,7 +92,9 @@ class AdminPage extends StatelessWidget {
                 );
               }),
               _buildButton(context, "Pengelolaan Pengguna",  Color(0xFF4A0D00), () {
-                //......
+                Navigator.push(context, 
+                  MaterialPageRoute(builder: (context) => ManageUsers())
+                );
               }),
               _buildButton(context, "Peminjaman Buku",  Color(0xFF4A0D00), () {
                 Navigator.push(
@@ -99,7 +103,10 @@ class AdminPage extends StatelessWidget {
                 );
               }),
               _buildButton(context, "Pengembalian Buku",  Color(0xFF4A0D00), () {
-                //......
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AdminReturnActivity())
+                );
               }),
               SizedBox(height: 30),
 
@@ -119,9 +126,9 @@ class AdminPage extends StatelessWidget {
                     _showDialog(context); // Memanggil fungsi dialog
                   },
                   child: Text(
-                    'Logout',
+                    'Keluar',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 20,
                       //fontWeight: FontWeight.w500
                     ),
                   ),
@@ -152,7 +159,7 @@ class AdminPage extends StatelessWidget {
           child: Text(
             text,
             style: TextStyle(
-              fontSize: 16,
+              fontSize: 18,
               //fontWeight: FontWeight.w500
             ),
           ),
