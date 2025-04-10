@@ -35,7 +35,7 @@ class ManageUsers extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Pengelolaan Pengguna",
+          "User Management",
           style: TextStyle(
               fontSize: 24,
               color: Colors.white
@@ -52,7 +52,7 @@ class ManageUsers extends StatelessWidget {
         child: users.isEmpty
             ? const Center(
           child: Text(
-            "Data pengguna kosong",
+            "Empty user data",
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.grey),
           ),
         )

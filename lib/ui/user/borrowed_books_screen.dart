@@ -40,7 +40,7 @@ class BorrowedBooksScreen extends StatelessWidget {
             children: [
               Center(
                 child: Text(
-                  "Daftar Buku yang Dipinjam",
+                  "List of Borrowed Books",
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.bold,
@@ -57,7 +57,7 @@ class BorrowedBooksScreen extends StatelessWidget {
                     Icon(Icons.book, size: 80, color: Colors.brown[300]),
                     SizedBox(height: 16),
                     Text(
-                      "Tidak ada buku yang dipinjam",
+                      "No books borrowed",
                       style: TextStyle(fontSize: 18, color: Colors.grey[600]),
                     ),
 
@@ -83,7 +83,7 @@ class BorrowedBooksScreen extends StatelessWidget {
               //SizedBox(height: 20),
               Center(
                 child:
-                Text('Jangan lupa untuk dikembalikan',
+                Text("Don't forget to return",
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.grey

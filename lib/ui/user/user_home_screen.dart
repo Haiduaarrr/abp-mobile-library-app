@@ -100,7 +100,7 @@ class HomeScreen extends StatelessWidget {
 
                       // Daftar Buku Title
                       Text(
-                        "Daftar Buku",
+                        "Book List",
                         style: TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
@@ -117,8 +117,8 @@ class HomeScreen extends StatelessWidget {
                         itemCount: 8, // Ganti sesuai jumlah data real nanti
                         itemBuilder: (context, index) {
                           // Contoh data dummy
-                          String judul = 'Judul Buku $index';
-                          String penulis = 'Penulis $index';
+                          String judul = 'Book Title $index';
+                          String penulis = 'Author $index';
                           int stok = 5 + index;
 
                           return Card(
@@ -134,9 +134,9 @@ class HomeScreen extends StatelessWidget {
                                 children: [
                                   Text(judul, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                                   SizedBox(height: 4),
-                                  Text('Penulis: $penulis'),
+                                  Text('Author: $penulis'),
                                   SizedBox(height: 4),
-                                  Text('Stok: $stok'),
+                                  Text('Stock: $stok'),
                                 ],
                               ),
                             ),

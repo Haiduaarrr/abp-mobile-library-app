@@ -46,7 +46,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               TextField(
                 controller: _nameController,
                 decoration: InputDecoration(
-                    hintText: "Nama Lengkap",
+                    hintText: "Full Name",
                     border: UnderlineInputBorder(),
                     contentPadding: EdgeInsets.all(12),
                     prefixIcon: Icon(Icons.person)
@@ -59,7 +59,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 controller: _phoneController,
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
-                    hintText: "Nomor Telepon",
+                    hintText: "Phone Number",
                     border: UnderlineInputBorder(),
                     contentPadding: EdgeInsets.all(12),
                     prefixIcon: Icon(Icons.phone)
@@ -145,7 +145,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: TextField(
                   controller: _adminCodeController,
                   decoration: InputDecoration(
-                      hintText: "Masukkan kode admin",
+                      hintText: "Enter admin code",
                       border: UnderlineInputBorder(),
                       contentPadding: EdgeInsets.all(12),
                       prefixIcon:Icon(Icons.admin_panel_settings)

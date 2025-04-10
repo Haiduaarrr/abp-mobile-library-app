@@ -159,7 +159,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       );
                     },
                     child: const Text(
-                      'Belum punya akun? Daftar di sini',
+                      "Don't have an account yet? Register here",
                       style: TextStyle(color: Colors.brown),
                     ),
                   ),

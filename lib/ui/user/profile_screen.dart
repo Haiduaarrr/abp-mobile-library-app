@@ -12,18 +12,18 @@ class ProfileScreen extends StatelessWidget {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text('Logout'), // Judul dialog
-          content: Text('Apakah Anda yakin ingin keluar?'), // Isi dialog
+          content: Text('Are you sure you want to quit?'), // Isi dialog
           actions: [
             // Tombol Tidak
             TextButton(
-              child: Text('Tidak'),
+              child: Text('No'),
               onPressed: () {
                 Navigator.of(context).pop(); // Menutup dialog
               },
             ),
             // Tombol Ya
             TextButton(
-              child: Text('Ya'),
+              child: Text('Yes'),
               onPressed: () {
                 Navigator.of(context).pop(); // Menutup dialog
                 // Tambahkan logika logout di sini, misalnya:
@@ -109,7 +109,7 @@ class ProfileScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                   ),
                 ),
-                child: Text("Keluar", style: TextStyle(fontSize: 18)),
+                child: Text("Logout", style: TextStyle(fontSize: 18)),
               ),
               SizedBox(height: 16),
             ],

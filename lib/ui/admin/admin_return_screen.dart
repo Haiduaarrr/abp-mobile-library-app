@@ -32,14 +32,14 @@ class _AdminReturnActivityState extends State<AdminReturnActivity> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Pengembalian Buku'),
-          content: Text('Buku berhasil dikembalikan'),
+          title: Text('Book Return'),
+          content: Text('Book successfully returned'),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text("Oke")
+              child: Text("Okay")
             )
           ],
         );
@@ -52,7 +52,7 @@ class _AdminReturnActivityState extends State<AdminReturnActivity> {
     return Scaffold( // Scaffold adalah struktur dasar dari layar di Flutter
       appBar: AppBar(
         title: const Text(
-          "Pengembalian Buku",
+          "Book Return",
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
@@ -66,7 +66,7 @@ class _AdminReturnActivityState extends State<AdminReturnActivity> {
           children: [
             const SizedBox(height: 16), // Spasi atas
             const Text(
-              "Pilih User",
+              "Select User",
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
@@ -100,7 +100,7 @@ class _AdminReturnActivityState extends State<AdminReturnActivity> {
                   controller: fieldController, // Controller input user
                   focusNode: focusNode, // Fokus input
                   decoration: InputDecoration(
-                    hintText: "Pilih User", // Teks petunjuk di field
+                    hintText: "Select User", // Teks petunjuk di field
                     fillColor: Colors.grey[200], // Warna latar field
                     border: UnderlineInputBorder(),
                   ),
@@ -116,7 +116,7 @@ class _AdminReturnActivityState extends State<AdminReturnActivity> {
 
             // Label teks untuk input buku
             const Text(
-              "Pilih Buku yang Dipinjam",
+              "Select Borrowed Books",
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8), // Spasi bawah label
@@ -149,7 +149,7 @@ class _AdminReturnActivityState extends State<AdminReturnActivity> {
                   controller: fieldController, // Controller input buku
                   focusNode: focusNode,
                   decoration: InputDecoration(
-                    hintText: "Pilih Buku yang Dipinjam",
+                    hintText: "Select Borrowed Books",
                     fillColor: Colors.grey[200],
                     border: UnderlineInputBorder(),
                   ),
@@ -177,7 +177,7 @@ class _AdminReturnActivityState extends State<AdminReturnActivity> {
               ),
               child: const Center(
                 child: Text(
-                  "Kembalikan Buku", // Teks di tombol
+                  "Return the Book", // Teks di tombol
                   style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
               ),

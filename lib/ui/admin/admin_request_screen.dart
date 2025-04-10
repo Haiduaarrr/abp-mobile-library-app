@@ -36,8 +36,8 @@ class _AdminRequestState extends State<AdminRequest> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text('Peminjaman'), // Judul dialog
-            content: Text('Peminjaman telah berhasil'), // Isi dialog
+            title: Text('Borrowing'), // Judul dialog
+            content: Text('Borrowing has been successful'), // Isi dialog
             actions: [
               // Tombol untuk menutup dialog
               TextButton(
@@ -57,7 +57,7 @@ class _AdminRequestState extends State<AdminRequest> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Peminjaman Buku",
+        title: const Text("Book Borrowing",
           style: TextStyle(
             color: Colors.white,
           ),
@@ -75,7 +75,7 @@ class _AdminRequestState extends State<AdminRequest> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 20),
-            const Text("Pilih User"),
+            const Text("Select User"),
             DropdownButtonFormField<String>(
               items: ["User 1", "User 2"].map((String user) {
                 return DropdownMenuItem<String>(
@@ -87,7 +87,7 @@ class _AdminRequestState extends State<AdminRequest> {
               decoration: const InputDecoration(border: UnderlineInputBorder()),
             ),
             const SizedBox(height: 16),
-            const Text("Pilih Buku"),
+            const Text("Select Book"),
             DropdownButtonFormField<String>(
               items: ["Buku A", "Buku B"].map((String book) {
                 return DropdownMenuItem<String>(
@@ -107,7 +107,7 @@ class _AdminRequestState extends State<AdminRequest> {
             TextField(
               controller: _borrowDateController,
               decoration: InputDecoration(
-                labelText: "Tanggal Pinjam (YYYY-MM-DD)",
+                labelText: "Borrowing Date (YYYY-MM-DD)",
                 border: UnderlineInputBorder(),
                 suffixIcon: IconButton(
                   icon: Icon(Icons.calendar_today),
@@ -120,7 +120,7 @@ class _AdminRequestState extends State<AdminRequest> {
             TextField(
               controller: _returnDateController,
               decoration: InputDecoration(
-                labelText: "Tanggal Kembali (YYYY-MM-DD)",
+                labelText: "Return Date (YYYY-MM-DD)",
                 border: UnderlineInputBorder(),
                 suffixIcon: IconButton(
                   icon: Icon(Icons.calendar_today),
@@ -142,7 +142,7 @@ class _AdminRequestState extends State<AdminRequest> {
                       backgroundColor: Colors.green
                     ),
                     child: const Text(
-                        "Terima",
+                        "Accept",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
@@ -161,7 +161,7 @@ class _AdminRequestState extends State<AdminRequest> {
                     },
                     style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
                     child: const Text(
-                        "Tolak",
+                        "Reject",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,

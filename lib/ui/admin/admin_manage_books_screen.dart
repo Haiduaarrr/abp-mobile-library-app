@@ -133,18 +133,18 @@ class _ManageBooksState extends State<ManageBooks> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text('Delete Book'), // Judul dialog
-          content: Text('Anda yakin ingin menghapus buku ini?'),
+          content: Text('Are you sure you want to delete this book?'),
           actions: [
             // Tombol untuk membatalkan
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop(); // Membatalkan hapus buku
               }, 
-              child: Text('Batal')
+              child: Text('Cancel')
             ),
             // Tombol untuk menghapus
             TextButton(
-              child: Text('Hapus'),
+              child: Text('Delete'),
               onPressed: () {
                 Navigator.of(context).pop();  // Untuk menutup kembali (utk sementara)
                 // Tambahkan fungsi delete buku
@@ -162,14 +162,14 @@ class _ManageBooksState extends State<ManageBooks> {
     setState(() {
       books.removeAt(index);
     });
-    print("Buku berhasil dihapus");
+    print("Book successfully deleted");
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pengelolaan Buku',
+        title: const Text('Book Management',
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
@@ -224,7 +224,7 @@ class _ManageBooksState extends State<ManageBooks> {
                 backgroundColor: Color(0xFF4A0D00),
                 padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
               ),
-              child: const Text("Tambah Buku", style: TextStyle(color: Colors.white)),
+              child: const Text("Add Book", style: TextStyle(color: Colors.white)),
             ),
           ],
         ),

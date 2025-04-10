@@ -16,18 +16,18 @@ class AdminPage extends StatelessWidget {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text('Logout'), // Judul dialog
-          content: Text('Apakah Anda yakin ingin keluar?'), // Isi dialog
+          content: Text('Are you sure you want to quit?'), // Isi dialog
           actions: [
             // Tombol Tidak
             TextButton(
-              child: Text('Tidak'),
+              child: Text('No'),
               onPressed: () {
                 Navigator.of(context).pop(); // Menutup dialog
               },
             ),
             // Tombol Ya
             TextButton(
-              child: Text('Ya'),
+              child: Text('Yes'),
               onPressed: () {
                 Navigator.of(context).pop(); // Menutup dialog
                 // Tambahkan logika logout di sini, misalnya:
@@ -50,7 +50,7 @@ class AdminPage extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
-          "Halaman Admin",
+          "Admin Home",
           style: TextStyle(
               fontSize: 24,
               color: Colors.white
@@ -79,30 +79,30 @@ class AdminPage extends StatelessWidget {
               ),
               SizedBox(height: 30),
               Text(
-                "Selamat datang, Admin!",
+                "Welcome, Admin!",
                 style: TextStyle(
                     fontSize: 26,
                     color: Colors.grey[500]
                 ),
               ),
               SizedBox(height: 30),
-              _buildButton(context, "Pengelolaan Buku",  Color(0xFF4A0D00), () {
+              _buildButton(context, "Book Management",  Color(0xFF4A0D00), () {
                 Navigator.push(context,
                   MaterialPageRoute(builder: (context) => ManageBooks())  // Untuk menuju halaman admin manage book
                 );
               }),
-              _buildButton(context, "Pengelolaan Pengguna",  Color(0xFF4A0D00), () {
+              _buildButton(context, "User Management",  Color(0xFF4A0D00), () {
                 Navigator.push(context, 
                   MaterialPageRoute(builder: (context) => ManageUsers())
                 );
               }),
-              _buildButton(context, "Peminjaman Buku",  Color(0xFF4A0D00), () {
+              _buildButton(context, "Book Borrowing",  Color(0xFF4A0D00), () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => AdminRequest())
                 );
               }),
-              _buildButton(context, "Pengembalian Buku",  Color(0xFF4A0D00), () {
+              _buildButton(context, "Book Return",  Color(0xFF4A0D00), () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => AdminReturnActivity())
@@ -126,7 +126,7 @@ class AdminPage extends StatelessWidget {
                     _showDialog(context); // Memanggil fungsi dialog
                   },
                   child: Text(
-                    'Keluar',
+                    'Logout',
                     style: TextStyle(
                       fontSize: 20,
                       //fontWeight: FontWeight.w500

@@ -51,7 +51,7 @@ class _SearchBooksScreenState extends State<SearchBooksScreen> {
               children: [
                 Center(
                   child: Text(
-                    "Jelajahi koleksi",
+                    "Explore the collection",
                     style: TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
