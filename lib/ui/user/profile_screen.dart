@@ -86,9 +86,9 @@ class ProfileScreen extends StatelessWidget {
               ),
               SizedBox(height: 8),
 
-              // Email Pengguna
+              // Nomor HP Pengguna
               Text(
-                "user@example.com",
+                "081192342122",
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.grey,
